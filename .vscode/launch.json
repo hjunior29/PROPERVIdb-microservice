@@ -5,9 +5,12 @@
             "name": "Go: Start",
             "type": "go",
             "request": "launch",
+            "mode": "auto",
+            "cwd": "${workspaceFolder}",
             "program": "${workspaceFolder}/main.go",
-            "env": {},
-            "args": []
+            "envFile": "${workspaceFolder}/.env",
+            "console": "integratedTerminal"
         }
+
     ]
 }
