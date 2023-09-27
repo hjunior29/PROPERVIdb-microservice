@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hjunior29/PROPERVIdb-service/models"
+	"github.com/hjunior29/PROPERVIdb-microservice/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )

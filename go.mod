@@ -1,4 +1,4 @@
-module github.com/hjunior29/PROPERVIdb-service
+module github.com/hjunior29/PROPERVIdb-microservice
 
 go 1.20
 

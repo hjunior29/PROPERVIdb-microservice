@@ -2,7 +2,7 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/hjunior29/PROPERVIdb-service/handlers"
+	"github.com/hjunior29/PROPERVIdb-microservice/handlers"
 )
 
 func HandleRequest() {

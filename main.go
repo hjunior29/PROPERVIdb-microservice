@@ -4,8 +4,8 @@ import (
 	"log"
 	"os"
 
-	"github.com/hjunior29/PROPERVIdb-service/db"
-	"github.com/hjunior29/PROPERVIdb-service/routes"
+	"github.com/hjunior29/PROPERVIdb-microservice/db"
+	"github.com/hjunior29/PROPERVIdb-microservice/routes"
 	"github.com/joho/godotenv"
 )
 
