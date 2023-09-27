@@ -28,21 +28,32 @@ func AddProperties(c *gin.Context) {
 
 	body, err := ioutil.ReadAll(c.Request.Body)
 	if err != nil {
-		c.JSON(400, gin.H{"error": "Failed to read request body"})
+		c.JSON(400, gin.H{
+			"error": "Failed to read request body",
+			"message": err.Error(),
+		})
 		return
 	}
-
+	
 	if err := json.Unmarshal(body, &properties); err != nil {
-		c.JSON(400, gin.H{"error": "Failed to decode JSON payload"})
+		c.JSON(400, gin.H{
+			"error": "Failed to decode JSON payload",
+			"message": err.Error(),
+		})
+		log.Printf("Body: %v\n", body)
 		return
 	}
-
+	
 	if err := db.DB.Create(&properties).Error; err != nil {
-		c.JSON(500, gin.H{"error": "Failed to add properties to the database"})
+		c.JSON(500, gin.H{
+			"error": "Failed to add properties to the database",
+			"message": err.Error(),
+		})
 		log.Printf("Failed to add properties to the database. Payload: %v\n", properties)
 		log.Printf("Error: %v\n", err)
 		return
 	}
-
+	
 	c.JSON(200, gin.H{"message": "Properties added successfully"})
-}
+
+}	
