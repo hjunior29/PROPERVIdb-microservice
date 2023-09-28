@@ -5,9 +5,10 @@ import (
 	"github.com/hjunior29/PROPERVIdb-microservice/handlers"
 )
 
-func HandleRequest() {
+func HandleRequest() *gin.Engine {
 	r := gin.Default()
-	r.GET("/", handlers.Home)
+	r.GET("/", handlers.Status)
 	r.POST("/add-properties", handlers.AddProperties)
-	r.Run()
+	
+	return r
 }

@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"time"
@@ -11,7 +12,7 @@ import (
 	"github.com/hjunior29/PROPERVIdb-microservice/models"
 )
 
-func Home(c *gin.Context) {
+func Status(c *gin.Context) {
 	message := "Microservice intended for database operations."
 	currentTime := time.Now().Format(time.RFC3339)
 	status := "running"
@@ -27,6 +28,7 @@ func AddProperties(c *gin.Context) {
 	var properties []models.Properties
 
 	body, err := ioutil.ReadAll(c.Request.Body)
+	fmt.Println(string(body))
 	if err != nil {
 		c.JSON(400, gin.H{
 			"error":   "Failed to read request body",
